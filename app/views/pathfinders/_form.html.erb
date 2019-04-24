@@ -1,0 +1,42 @@
+<%= form_with(model: pathfinder, local: true) do |form| %>
+  <% if pathfinder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pathfinder.errors.count, "error") %> prohibited this pathfinder from being saved:</h2>
+
+      <ul>
+      <% pathfinder.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :birthday %>
+    <%= form.datetime_select :birthday %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dni %>
+    <%= form.number_field :dni %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unit_id %>
+    <%= form.text_field :unit_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

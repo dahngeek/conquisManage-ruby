@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pathfinder.name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @pathfinder.last_name %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @pathfinder.birthday %>
+</p>
+
+<p>
+  <strong>Dni:</strong>
+  <%= @pathfinder.dni %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @pathfinder.unit %>
+</p>
+
+<%= link_to 'Edit', edit_pathfinder_path(@pathfinder) %> |
+<%= link_to 'Back', pathfinders_path %>
