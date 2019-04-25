@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Counselor</th>
+      <th>Cantidad de Conquistadores</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= unit.name %></td>
         <td><%= unit.counselor.full_name %></td>
+        <td><%= unit.pathfinders.count %></td>
         <td><%= link_to 'Show', unit %></td>
         <td><%= link_to 'Edit', edit_unit_path(unit) %></td>
         <td><%= link_to 'Destroy', unit, method: :delete, data: { confirm: 'Are you sure?' } %></td>

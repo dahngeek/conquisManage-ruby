@@ -10,5 +10,11 @@
   <%= @unit.counselor.full_name %>
 </p>
 
+<ul>
+<% @unit.pathfinders.each do |pathfinder| %>
+    <li><%= pathfinder.full_name %></li>
+<% end %>
+</ul>
+
 <%= link_to 'Edit', edit_unit_path(@unit) %> |
 <%= link_to 'Back', units_path %>
