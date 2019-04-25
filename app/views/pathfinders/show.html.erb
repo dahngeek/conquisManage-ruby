@@ -1,29 +1,39 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @pathfinder.name %>
-</p>
+<div class="row justify-content-center">
+    <div class="col-3 text-center">
+      <div class="card text-center">
+        <div class="card-header">
+          <%= @pathfinder.name %>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <strong>Last name:</strong>
+                <%= @pathfinder.last_name %>
+              </li>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @pathfinder.last_name %>
-</p>
+              <li class="list-group-item">
+                <strong>Birthday:</strong>
+                <%= @pathfinder.birthday %>
+              </li>
 
-<p>
-  <strong>Birthday:</strong>
-  <%= @pathfinder.birthday %>
-</p>
+              <li class="list-group-item">
+                <strong>Dni:</strong>
+                <%= @pathfinder.dni %>
+              </li>
 
-<p>
-  <strong>Dni:</strong>
-  <%= @pathfinder.dni %>
-</p>
-
-<p>
-  <strong>Unit:</strong>
-  <%= @pathfinder.unit.name %>
-</p>
-
-<%= link_to 'Edit', edit_pathfinder_path(@pathfinder) %> |
-<%= link_to 'Back', pathfinders_path %>
+              <li class="list-group-item">
+                <strong>Unit:</strong>
+                <%= @pathfinder.unit.name %>
+              </li>
+          </ul>
+        </div>
+        <div class="card-footer text-muted">
+        <div class="btn-group btn-group-lg" role="group">
+          <%= link_to 'Back', pathfinders_path, { :class=>"btn btn-primary btn-lg active"} %>
+          <%= link_to 'Edit', edit_pathfinder_path(@pathfinder), { :class=>"btn btn-primary btn-lg active"} %>
+        </div>
+      </div>
+    </div>
+</div>

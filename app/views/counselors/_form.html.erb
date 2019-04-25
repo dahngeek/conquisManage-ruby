@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, {:class=>"form-control"} %>
   </div>
 
   <div class="field">
     <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.text_field :last_name, {:class=>"form-control"} %>
   </div>
 
   <div class="field">
     <%= form.label :dni %>
-    <%= form.number_field :dni %>
+    <%= form.number_field :dni, {:class=>"form-control"} %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Guardar Consejero', {:class=>"btn btn-primary"} %>
   </div>
 <% end %>

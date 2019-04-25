@@ -1,20 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @unit.name %>
-</p>
-
-<p>
-  <strong>Counselor:</strong>
-  <%= @unit.counselor.full_name %>
-</p>
-
-<ul>
-<% @unit.pathfinders.each do |pathfinder| %>
-    <li><%= pathfinder.full_name %></li>
-<% end %>
-</ul>
-
-<%= link_to 'Edit', edit_unit_path(@unit) %> |
-<%= link_to 'Back', units_path %>
+<div class="row justify-content-center">
+    <div class="col-3 text-center">
+      <div class="card text-center">
+        <div class="card-header">
+          Unidad: <%= @unit.name %>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <% @unit.pathfinders.each do |pathfinder| %>
+              <li class="list-group-item"><%= pathfinder.full_name %></li>
+            <% end %>
+          </ul>
+        </div>
+        <div class="card-footer text-muted">
+        <div class="btn-group btn-group-lg" role="group">
+          <%= link_to 'Back', units_path, { :class=>"btn btn-primary btn-lg active"} %>
+          <%= link_to 'Edit', edit_unit_path(@unit), { :class=>"btn btn-primary btn-lg active"} %>
+        </div>
+      </div>
+    </div>
+</div>

@@ -2,8 +2,8 @@
 
 <h1>Units</h1>
 
-<table>
-  <thead>
+<table class="table table-hover">
+  <thead class="thead-dark">
     <tr>
       <th>Name</th>
       <th>Counselor</th>
@@ -15,7 +15,7 @@
   <tbody>
     <% @units.each do |unit| %>
       <tr>
-        <td><%= unit.name %></td>
+        <td scope="row"><%= unit.name %></td>
         <td><%= unit.counselor.full_name %></td>
         <td><%= unit.pathfinders.count %></td>
         <td><%= link_to 'Show', unit %></td>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Unit', new_unit_path %>
+<%= link_to 'Nueva Unidad', new_unit_path, { :class=>"btn btn-primary btn-lg active"} %>

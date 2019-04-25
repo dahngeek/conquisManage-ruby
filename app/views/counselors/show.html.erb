@@ -1,19 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @counselor.name %>
-</p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @counselor.last_name %>
-</p>
-
-<p>
-  <strong>Dni:</strong>
-  <%= @counselor.dni %>
-</p>
-
-<%= link_to 'Edit', edit_counselor_path(@counselor) %> |
-<%= link_to 'Back', counselors_path %>
+<div class="row justify-content-center">
+    <div class="col-3 text-center">
+      <div class="card text-center">
+        <div class="card-header">
+          <%= @counselor.full_name %>
+        </div>
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <strong>Dni:</strong>
+                <%= @counselor.dni %>
+              </li>
+          </ul>
+        </div>
+        <div class="card-footer text-muted">
+        <div class="btn-group btn-group-lg" role="group">
+          <%= link_to 'Back', counselors_path, { :class=>"btn btn-primary btn-lg active"} %>
+          <%= link_to 'Edit', edit_counselor_path(@counselor) , { :class=>"btn btn-primary btn-lg active"} %>
+        </div>
+      </div>
+    </div>
+</div>
