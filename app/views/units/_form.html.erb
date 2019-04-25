@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :counselor_id %>
-    <%= form.text_field :counselor_id %>
+    <%= collection_select(:unit, :counselor_id, Counselor.all, :id, :full_name) %>
   </div>
 
   <div class="actions">
