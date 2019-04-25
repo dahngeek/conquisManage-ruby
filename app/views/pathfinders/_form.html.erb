@@ -1,42 +1,38 @@
+
 <%= form_with(model: pathfinder, local: true) do |form| %>
-  <% if pathfinder.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(pathfinder.errors.count, "error") %> prohibited this pathfinder from being saved:</h2>
+    <% if pathfinder.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(pathfinder.errors.count, "error") %> prohibited this pathfinder from being saved:</h2>
 
-      <ul>
-      <% pathfinder.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% pathfinder.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  <div class="form-group">
+      <%= form.label :name %>
+      <%= form.text_field :name, {:class=>"form-control"} %>
+  </div>
+  <div class="form-group">
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name, {:class=>"form-control"} %>
+  </div>
+
+  <div class="form-group">
+      <%= form.label :birthday %>
+      <%= form.datetime_select :birthday, {:class=>"form-control"} %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+    <div class="form-group">
+      <%= form.label :dni %>
+      <%= form.number_field :dni, {:class=>"form-control"} %>
+    </div>
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :birthday %>
-    <%= form.datetime_select :birthday %>
-  </div>
-
-  <div class="field">
-    <%= form.label :dni %>
-    <%= form.number_field :dni %>
-  </div>
-
-  <div class="field">
-    <%= form.label :unit_id %>
-    <%= collection_select(:pathfinder, :unit_id, Unit.all, :id, :name) %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="form-group">
+      <%= form.label :unit_id %>
+      <%= collection_select(:pathfinder, :unit_id, Unit.all, :id, :name, {:class=>"form-control"}) %>
+    </div>
+    <%= form.submit 'Crear Pathfinder', {:class=>"btn btn-primary"} %>
 <% end %>
