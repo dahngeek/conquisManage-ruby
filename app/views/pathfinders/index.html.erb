@@ -21,7 +21,7 @@
         <td><%= pathfinder.last_name %></td>
         <td><%= pathfinder.birthday %></td>
         <td><%= pathfinder.dni %></td>
-        <td><%= pathfinder.unit %></td>
+        <td><%= pathfinder.unit.name %></td>
         <td><%= link_to 'Show', pathfinder %></td>
         <td><%= link_to 'Edit', edit_pathfinder_path(pathfinder) %></td>
         <td><%= link_to 'Destroy', pathfinder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
