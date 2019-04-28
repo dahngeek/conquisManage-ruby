@@ -6,6 +6,9 @@ class PathfindersController < ApplicationController
   def index
     @pathfinders = Pathfinder.all
     @pathfinders = @pathfinders.where(:unit_id => params[:unit_id]) if params[:unit_id]
+    if params[:search]
+      @pathfinders = @pathfinders.where('name like ?', '%' + params[:search] + '%' )
+    end
   end
 
   # GET /pathfinders/1
