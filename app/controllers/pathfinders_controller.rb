@@ -5,6 +5,7 @@ class PathfindersController < ApplicationController
   # GET /pathfinders.json
   def index
     @pathfinders = Pathfinder.all
+    @pathfinders = @pathfinders.where(:unit_id => params[:unit_id]) if params[:unit_id]
   end
 
   # GET /pathfinders/1
