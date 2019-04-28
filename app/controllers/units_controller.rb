@@ -54,10 +54,17 @@ class UnitsController < ApplicationController
   # DELETE /units/1
   # DELETE /units/1.json
   def destroy
-    @unit.destroy
-    respond_to do |format|
-      format.html { redirect_to units_url, notice: 'Unit was successfully destroyed.' }
-      format.json { head :no_content }
+    if @unit.pathfinders.any?
+      respond_to do |format|
+        format.html { redirect_to units_url, notice: 'Esa unidad tiene conquistadores, eliminelos antes de borrarla.' }
+        format.json { head :no_content }
+      end
+    else
+      @unit.destroy
+      respond_to do |format|
+        format.html { redirect_to units_url, notice: 'Unit was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
